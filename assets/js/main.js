@@ -14,10 +14,10 @@ function handleTopNavAnimation() {
 	var top=$(window).scrollTop();
 
 	if(top>10){
-		$('#site-nav').addClass('navbar-solid'); 
+		$('#site-nav').addClass('navbar-solid');
 	}
 	else{
-		$('#site-nav').removeClass('navbar-solid'); 
+		$('#site-nav').removeClass('navbar-solid');
 	}
 }
 
@@ -27,7 +27,7 @@ function handleTopNavAnimation() {
 
 $('#registration-form').submit(function(e){
     e.preventDefault();
-    
+
     var postForm = { //Fetch form data
             'fname'     : $('#registration-form #fname').val(),
             'lname'     : $('#registration-form #lname').val(),
@@ -67,3 +67,31 @@ $('#registration-form').submit(function(e){
 */
 
 smoothScroll.init();
+
+
+
+
+// //////////////////////////////////////////////////////////////////////////////////////////
+const second = 1000,
+      minute = second * 60,
+      hour = minute * 60,
+      day = hour * 24;
+
+let countDown = new Date('March 24, 2018 09:00:00').getTime(),
+    x = setInterval(function() {
+
+      let now = new Date().getTime(),
+          distance = countDown - now;
+
+      document.getElementById('days').innerHTML = Math.floor(distance / (day)),
+        document.getElementById('hours').innerHTML = Math.floor((distance % (day)) / (hour)),
+        document.getElementById('minutes').innerHTML = Math.floor((distance % (hour)) / (minute)),
+        document.getElementById('seconds').innerHTML = Math.floor((distance % (minute)) / second);
+
+      //do something later when date is reached
+      //if (distance < 0) {
+      //  clearInterval(x);
+      //  'IT'S MY BIRTHDAY!;
+      //}
+
+    }, second)

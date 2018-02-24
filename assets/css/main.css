@@ -311,7 +311,7 @@ ul li {
 }
 .site-branding .logo:focus, .site-branding .logo:hover {
   text-decoration: none;
-  
+
 }
 
 /*
@@ -627,3 +627,28 @@ ul li {
     width: 100%;
     padding: 20px;
 }
+
+
+
+////////////////////////////////////////////
+  .container {
+    color: #333;
+    text-align: center;
+  }
+
+  h1 {
+    font-weight: normal;
+  }
+
+  li {
+    display: inline-block;
+    font-size: 1.5em;
+    list-style-type: none;
+    padding: 1em;
+    text-transform: uppercase;
+  }
+
+  li span {
+    display: block;
+    font-size: 4.5rem;
+  }
