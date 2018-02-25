@@ -631,7 +631,7 @@ ul li {
 
 
 ////////////////////////////////////////////
-  .container {
+  /* .container {
     color: #333;
     text-align: center;
   }
@@ -640,7 +640,7 @@ ul li {
     font-weight: normal;
   }
 
-  li {
+  .container li {
     display: inline-block;
     font-size: 1.5em;
     list-style-type: none;
@@ -648,7 +648,7 @@ ul li {
     text-transform: uppercase;
   }
 
-  li span {
+  .comtainer li span {
     display: block;
     font-size: 4.5rem;
-  }
+  } */
