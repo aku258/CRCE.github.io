@@ -631,7 +631,7 @@ ul li {
 
 
 ////////////////////////////////////////////
-  /* .container {
+  .container {
     color: #333;
     text-align: center;
   }
@@ -651,4 +651,4 @@ ul li {
   .comtainer li span {
     display: block;
     font-size: 4.5rem;
-  } */
+  }
