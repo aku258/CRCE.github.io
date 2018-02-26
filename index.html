@@ -11,6 +11,144 @@
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="bower_components/ionicons/css/ionicons.min.css">
     <link rel="stylesheet" href="assets/css/main.css">
+
+    <style media="screen">
+    @import "compass/css3";
+
+body {
+background: #ccc;
+}
+
+.timeline-wrapper {
+display: block;
+width: 90%;
+height: 15rem;
+position: relative;
+color: #fff;
+text-align: center;
+margin: 0 auto;
+
+.timeline-line {
+display: block;
+width: 93.9%;
+height: 1px;
+background: white;
+position: absolute;
+top: 50%;
+-webkit-box-shadow: 0 0 1px black;
+-moz-box-shadow: 0 0 1px black;
+box-shadow: 0 0 1px black;
+left: 3%;
+margin-left: 2.5px;
+}
+
+.timeline-content-day {
+height: 100%;
+}
+
+.timeline-content-item {
+background: url(data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7);
+width: 6%;
+display: inline-block;
+position: relative;
+height: 100%;
+margin-right: -5px;
+-webkit-transition: width .5s;
+-moz-transition: width .5s;
+-o-transition: width .5s;
+transition: width .5s;
+z-index: 1;
+
+> span {
+  height: 2rem;
+  display: block;
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  margin-top: -.25em;
+  width: 100%;
+  text-shadow: 0 0 2px black;
+  cursor: pointer;
+
+  &:before {
+    content: " ";
+    display: block;
+    width: .5em;
+    height: .5em;
+    background: white;
+    margin: 0 auto .5em auto;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    -webkit-box-shadow: 0 0 1px black;
+    -moz-box-shadow: 0 0 1px black;
+    box-shadow: 0 0 1px black;
+  }
+}
+
+.timeline-content-item-reveal {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  margin-top: -50%;
+  width: 100%;
+
+  a {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    img {
+      -moz-border-radius: 50%;
+      -webkit-border-radius: 50%;
+      border-radius: 50%;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      max-height: 100%;
+      max-width: 100%;
+      border: 3px solid white;
+      -webkit-box-shadow: 0 0 2px black;
+      -moz-box-shadow: 0 0 2px black;
+      box-shadow: 0 0 2px black;
+    }
+
+    span {
+      position: absolute;
+      width: 250%;
+      margin-left: -75%;
+      bottom: -2rem;
+      left: 0;
+      font-family: serif;
+      font-size: 1.3em;
+      font-style: italic;
+      text-decoration: none;
+      white-space: nowrap;
+      color: white;
+      text-shadow: 0 0 2px rgba(0, 0, 0, 0.5), 0 0 1px black;
+      &:after {
+        content: "\203A";
+        margin-left: .3em;
+      }
+    }
+  }
+
+
+}
+
+
+
+&.active {
+  width: 10%;
+  .timeline-content-item-reveal {
+    display: block;
+  }
+}
+}
+}
+    </style>
 </head>
 <body data-spy="scroll" data-target="#site-nav">
     <nav id="site-nav" class="navbar navbar-fixed-top navbar-custom">
@@ -627,7 +765,7 @@
                             </div>
                         </div>
 
-                        <!-- <div class="panel panel-default">
+                        <div class="panel panel-default">
                             <div class="panel-heading" role="tab" id="headingFive">
                                 <h4 class="panel-title">
                                     <a class="faq-toggle collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive"> I have specific questions that are not addressed here. Who can help me ?</a>
@@ -636,7 +774,7 @@
 
                             <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
                                 <div class="panel-body">Hello</div>
-                            </div> -->
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -733,5 +871,12 @@
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="bower_components/smooth-scroll/dist/js/smooth-scroll.min.js"></script>
     <script src="assets/js/main.js"></script>
+
+    <script type="text/javascript">
+    $(".timeline-wrapper .timeline-content-item > span").on("mouseenter mouseleave", function(e){
+$(".timeline-wrapper .timeline-content-item.active").removeClass("active");
+$(this).parent().addClass("active");
+});
+    </script>
 </body>
 </html>
